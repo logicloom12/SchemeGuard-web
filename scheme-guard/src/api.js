@@ -2,7 +2,7 @@
 // All requests go to the Node.js backend on port 4000.
 // Each function throws an Error with the backend error message on non-2xx.
 
-const BASE = 'http://localhost:4000';
+const BASE = import.meta.env.VITE_API_URL || 'http://localhost:4000';
 
 function headers(token) {
     return {

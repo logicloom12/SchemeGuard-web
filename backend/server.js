@@ -864,10 +864,17 @@ const PORT = process.env.PORT || 4000;
 const { MongoMemoryServer } = require('mongodb-memory-server');
 
 async function startServer() {
-  const mongoServer = await MongoMemoryServer.create();
-  const uri = mongoServer.getUri();
-  await mongoose.connect(uri);
-  console.log('📦 Connected to In-Memory MongoDB');
+  const MONGODB_URI = process.env.MONGODB_URI;
+
+  if (MONGODB_URI) {
+    await mongoose.connect(MONGODB_URI);
+    console.log('📦 Connected to External MongoDB (Atlas)');
+  } else {
+    const mongoServer = await MongoMemoryServer.create();
+    const uri = mongoServer.getUri();
+    await mongoose.connect(uri);
+    console.log('📦 Connected to In-Memory MongoDB (DEVELOPMENT ONLY)');
+  }
 
   // ── PART 1: Restore persisted cases from cases.json ─────
   const persisted = loadCases();
@@ -890,48 +897,58 @@ async function startServer() {
   }
   console.log(`📂 Reloaded ${reloaded} / ${persisted.length} cases from cases.json`);
 
-  // Seed user to be able to login
-  const adminPasswordHash = await bcrypt.hash('admin123', 10);
-  await User.create({ name: 'Admin', email: 'admin@schemeguard.gov.in', passwordHash: adminPasswordHash, role: 'admin' });
-  console.log('👤 Admin user seeded: admin@schemeguard.gov.in / admin123');
+  // Seed user only if none exists
+  const existingAdmin = await User.findOne({ email: 'admin@schemeguard.gov.in' });
+  if (!existingAdmin) {
+    const adminPasswordHash = await bcrypt.hash(process.env.ADMIN_PASSWORD || 'admin123', 10);
+    await User.create({
+      name: 'Admin',
+      email: 'admin@schemeguard.gov.in',
+      passwordHash: adminPasswordHash,
+      role: 'admin'
+    });
+    console.log('👤 Admin user seeded: admin@schemeguard.gov.in / ' + (process.env.ADMIN_PASSWORD ? '********' : 'admin123'));
+  }
 
-  // Seed sample beneficiaries
-  try {
-    const defaultData = [
-      { name: 'Rajesh Kumar', aadhaar: '123456783421', income: 28000, bankAccount: 'SBI-0042', district: 'Varanasi', schemeName: 'PM-KISAN' },
-      { name: 'Sunita Devi', aadhaar: '234567897812', income: 45000, bankAccount: 'PNB-1120', district: 'Lucknow', schemeName: 'PMAY' },
-      { name: 'Mohammad Rafi', aadhaar: '345678905509', income: 32000, bankAccount: 'BOB-2234', district: 'Agra', schemeName: 'MGNREGS' },
-      { name: 'Priya Sharma', aadhaar: '456789019901', income: 18000, bankAccount: 'SBI-0042', district: 'Kanpur', schemeName: 'PM-KISAN' },
-      { name: 'Arvind Yadav', aadhaar: '567890121123', income: 22000, bankAccount: 'HDFC-8812', district: 'Prayagraj', schemeName: 'PMAY' }
-    ];
+  // Seed sample beneficiaries only if database is empty
+  const count = await Beneficiary.countDocuments();
+  if (count === 0) {
+    try {
+      const defaultData = [
+        { name: 'Rajesh Kumar', aadhaar: '123456783421', income: 28000, bankAccount: 'SBI-0042', district: 'Varanasi', schemeName: 'PM-KISAN' },
+        { name: 'Sunita Devi', aadhaar: '234567897812', income: 45000, bankAccount: 'PNB-1120', district: 'Lucknow', schemeName: 'PMAY' },
+        { name: 'Mohammad Rafi', aadhaar: '345678905509', income: 32000, bankAccount: 'BOB-2234', district: 'Agra', schemeName: 'MGNREGS' },
+        { name: 'Priya Sharma', aadhaar: '456789019901', income: 18000, bankAccount: 'SBI-0042', district: 'Kanpur', schemeName: 'PM-KISAN' },
+        { name: 'Arvind Yadav', aadhaar: '567890121123', income: 22000, bankAccount: 'HDFC-8812', district: 'Prayagraj', schemeName: 'PMAY' }
+      ];
 
-    for (const b of defaultData) {
-      const beneficiary = new Beneficiary({
-        name: sanitize(b.name),
-        aadhaarEncrypted: encryptAadhaar(b.aadhaar),
-        aadhaarMasked: maskAadhaar(b.aadhaar),
-        income: b.income,
-        bankAccount: sanitize(b.bankAccount),
-        district: sanitize(b.district),
-        schemeName: sanitize(b.schemeName),
-        caseHash: generateCaseHash(b.name, b.aadhaar, b.schemeName)
-      });
+      for (const b of defaultData) {
+        const beneficiary = new Beneficiary({
+          name: sanitize(b.name),
+          aadhaarEncrypted: encryptAadhaar(b.aadhaar),
+          aadhaarMasked: maskAadhaar(b.aadhaar),
+          income: b.income,
+          bankAccount: sanitize(b.bankAccount),
+          district: sanitize(b.district),
+          schemeName: sanitize(b.schemeName),
+          caseHash: generateCaseHash(b.name, b.aadhaar, b.schemeName)
+        });
 
-      // Simple rule check (abridged)
-      if (b.schemeName === 'PM-KISAN' && b.income > 25000) {
-        beneficiary.riskScore += 20;
-        beneficiary.flags.push('income_mismatch');
+        if (b.schemeName === 'PM-KISAN' && b.income > 25000) {
+          beneficiary.riskScore += 20;
+          beneficiary.flags.push('income_mismatch');
+        }
+
+        const level = beneficiary.riskScore >= 70 ? 'HIGH' : beneficiary.riskScore >= 40 ? 'MEDIUM' : 'LOW';
+        beneficiary.riskLevel = level;
+        if (beneficiary.riskScore >= 40) beneficiary.caseStatus = 'Flagged';
+
+        await beneficiary.save();
       }
-
-      const level = beneficiary.riskScore >= 70 ? 'HIGH' : beneficiary.riskScore >= 40 ? 'MEDIUM' : 'LOW';
-      beneficiary.riskLevel = level;
-      if (beneficiary.riskScore >= 40) beneficiary.caseStatus = 'Flagged';
-
-      await beneficiary.save();
+      console.log('📋 Seeded 5 sample beneficiaries');
+    } catch (err) {
+      console.error('Failed to seed beneficiaries:', err);
     }
-    console.log('📋 Seeded 5 sample beneficiaries');
-  } catch (err) {
-    console.error('Failed to seed beneficiaries:', err);
   }
 
   app.listen(PORT, () => console.log(`🛡️  Scheme Guard API running on port ${PORT}`));
