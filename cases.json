@@ -1,0 +1,724 @@
+[
+  {
+    "name": "Ayush Singh",
+    "aadhaarMasked": "XXXX-XXXX-9122",
+    "aadhaarClean": "123456789122",
+    "income": 20000,
+    "bankAccount": "sbi",
+    "district": "Varanasi",
+    "state": "Uttar Pradesh",
+    "schemeName": "PM-KISAN",
+    "riskScore": 0,
+    "riskLevel": "LOW",
+    "caseStatus": "Under Investigation",
+    "officerNotes": "",
+    "flags": [],
+    "mlProbability": null,
+    "mlExplanation": null,
+    "caseHash": "32dd09794490d176a1acc05eec3f9968838ce30a1d7591398a13bfa79b48c906",
+    "aadhaarFrequency": 1,
+    "sameSchemeCount": 1,
+    "duplicationStatus": "unique",
+    "_id": "69a92ca4811a5ca7cd32914b",
+    "createdAt": "2026-03-05T06:57:49.489Z",
+    "updatedAt": "2026-03-05T07:14:39.738Z",
+    "__v": 0,
+    "escalated": true,
+    "priority": "High",
+    "investigation_report": {
+      "risk_summary": {
+        "risk_score": 0,
+        "risk_level": "LOW",
+        "ml_probability": 0,
+        "anomaly_score": 0.2
+      },
+      "duplication_analysis": {
+        "aadhaar_frequency": 1,
+        "same_scheme_count": 1,
+        "duplication_type": "unique"
+      },
+      "feature_analysis": {
+        "income": 20000,
+        "income_ratio": 0.8,
+        "bank_overlap": "none",
+        "district": "Varanasi",
+        "district_risk_value": 0.82
+      },
+      "shap_explanation": [],
+      "anomaly_analysis": {
+        "anomaly_score": 0.2,
+        "anomaly_interpretation": "Low anomaly — behaviour largely consistent with legitimate cases"
+      },
+      "final_decision_reasoning": "Varanasi is a high-risk district (risk score: 0.82).",
+      "generated_at": "2026-03-05T07:14:39.738Z"
+    },
+    "escalated_at": "2026-03-05T07:14:39.738Z"
+  },
+  {
+    "name": "Ayush Singh",
+    "aadhaarMasked": "XXXX-XXXX-9122",
+    "aadhaarClean": "123456789122",
+    "income": 15000,
+    "bankAccount": "sbi",
+    "district": "Varanasi",
+    "state": "Uttar Pradesh",
+    "schemeName": "PMAY",
+    "riskScore": 20,
+    "riskLevel": "LOW",
+    "caseStatus": "Under Investigation",
+    "officerNotes": "",
+    "flags": [
+      "cross_scheme_aadhaar_dup"
+    ],
+    "mlProbability": null,
+    "mlExplanation": null,
+    "caseHash": "f9971a670d92af645d841e6b4bf6f8df08df55b851e97f4275d01b887c94aa37",
+    "aadhaarFrequency": 2,
+    "sameSchemeCount": 1,
+    "duplicationStatus": "cross_scheme",
+    "_id": "69a92ca4811a5ca7cd329150",
+    "createdAt": "2026-03-05T06:58:23.843Z",
+    "updatedAt": "2026-03-05T07:13:46.238Z",
+    "__v": 0,
+    "escalated": true,
+    "priority": "High",
+    "investigation_report": {
+      "risk_summary": {
+        "risk_score": 20,
+        "risk_level": "LOW",
+        "ml_probability": 0,
+        "anomaly_score": 0.2
+      },
+      "duplication_analysis": {
+        "aadhaar_frequency": 2,
+        "same_scheme_count": 1,
+        "duplication_type": "cross_scheme"
+      },
+      "feature_analysis": {
+        "income": 15000,
+        "income_ratio": 0.6,
+        "bank_overlap": "none",
+        "district": "Varanasi",
+        "district_risk_value": 0.82
+      },
+      "shap_explanation": [],
+      "anomaly_analysis": {
+        "anomaly_score": 0.2,
+        "anomaly_interpretation": "Low anomaly — behaviour largely consistent with legitimate cases"
+      },
+      "final_decision_reasoning": "Aadhaar is active across multiple schemes (frequency: 2), warranting cross-scheme verification. Varanasi is a high-risk district (risk score: 0.82).",
+      "generated_at": "2026-03-05T07:13:46.238Z"
+    },
+    "escalated_at": "2026-03-05T07:13:46.238Z"
+  },
+  {
+    "name": "Test Block",
+    "aadhaarMasked": "XXXX-XXXX-7777",
+    "aadhaarClean": "999988887777",
+    "income": 15000,
+    "bankAccount": "TEST-123",
+    "district": "Agra",
+    "state": "Uttar Pradesh",
+    "schemeName": "PM-KISAN",
+    "riskScore": 0,
+    "riskLevel": "LOW",
+    "caseStatus": "Open",
+    "officerNotes": "",
+    "flags": [],
+    "mlProbability": null,
+    "mlExplanation": null,
+    "caseHash": "dc7b5e65b08b109f71abc1e3be49e49448edddc883914e0ac0525b62c25021b9",
+    "aadhaarFrequency": 1,
+    "sameSchemeCount": 1,
+    "duplicationStatus": "unique",
+    "escalated": false,
+    "priority": "Low",
+    "investigation_report": null,
+    "_id": "69a96b2bf3b5d26664535435",
+    "createdAt": "2026-03-05T11:38:19.562Z",
+    "updatedAt": "2026-03-05T11:38:19.562Z",
+    "__v": 0
+  },
+  {
+    "name": "Riya Tiwari",
+    "aadhaarMasked": "XXXX-XXXX-9221",
+    "aadhaarClean": "123456789221",
+    "income": 12000,
+    "bankAccount": "hdfc",
+    "district": "Agra",
+    "state": "Uttar Pradesh",
+    "schemeName": "PM-KISAN",
+    "riskScore": 0,
+    "riskLevel": "LOW",
+    "caseStatus": "Under Investigation",
+    "officerNotes": "",
+    "flags": [],
+    "mlProbability": null,
+    "mlExplanation": null,
+    "caseHash": "02891d700622c8d0b9b5e5cd07d9ae77b7bf353becb5fe039642528f3ffc5e9c",
+    "aadhaarFrequency": 1,
+    "sameSchemeCount": 1,
+    "duplicationStatus": "unique",
+    "escalated": true,
+    "priority": "High",
+    "investigation_report": {
+      "risk_summary": {
+        "risk_score": 0,
+        "risk_level": "LOW",
+        "ml_probability": 0,
+        "anomaly_score": 0.2
+      },
+      "duplication_analysis": {
+        "aadhaar_frequency": 1,
+        "same_scheme_count": 1,
+        "duplication_type": "unique"
+      },
+      "feature_analysis": {
+        "income": 12000,
+        "income_ratio": 0.48,
+        "bank_overlap": "none",
+        "district": "Agra",
+        "district_risk_value": 0.71
+      },
+      "shap_explanation": [],
+      "anomaly_analysis": {
+        "anomaly_score": 0.2,
+        "anomaly_interpretation": "Low anomaly — behaviour largely consistent with legitimate cases"
+      },
+      "final_decision_reasoning": "Agra is a high-risk district (risk score: 0.71).",
+      "generated_at": "2026-03-05T13:00:55.360Z"
+    },
+    "_id": "69a97d0907af273f7ecb71c1",
+    "createdAt": "2026-03-05T11:45:00.509Z",
+    "updatedAt": "2026-03-05T13:00:55.360Z",
+    "__v": 0,
+    "escalated_at": "2026-03-05T13:00:55.360Z"
+  },
+  {
+    "name": "RIya Tiwari",
+    "aadhaarMasked": "XXXX-XXXX-9322",
+    "aadhaarClean": "123456789322",
+    "income": 20000,
+    "bankAccount": "sbi",
+    "district": "Agra",
+    "state": "Uttar Pradesh",
+    "schemeName": "MGNREGA",
+    "riskScore": 30,
+    "riskLevel": "LOW",
+    "caseStatus": "Open",
+    "officerNotes": "",
+    "flags": [
+      "shared_bank"
+    ],
+    "mlProbability": null,
+    "mlExplanation": null,
+    "caseHash": "6f62d8e92474f9f38a828ed4009a9aa2cbebb2264bc63dcc034724343dd8e58b",
+    "aadhaarFrequency": 1,
+    "sameSchemeCount": 1,
+    "duplicationStatus": "unique",
+    "escalated": false,
+    "priority": "Low",
+    "investigation_report": null,
+    "_id": "69a97279f3b5d266645354b8",
+    "createdAt": "2026-03-05T12:09:29.576Z",
+    "updatedAt": "2026-03-05T12:09:29.576Z",
+    "__v": 0
+  },
+  {
+    "_id": "69a96b14f3b5d26664535421",
+    "name": "Rajesh Kumar",
+    "aadhaarMasked": "XXXX-XXXX-3421",
+    "aadhaarClean": "",
+    "income": 28000,
+    "bankAccount": "SBI-0042",
+    "district": "Varanasi",
+    "state": "Uttar Pradesh",
+    "schemeName": "PM-KISAN",
+    "riskScore": 20,
+    "riskLevel": "LOW",
+    "caseStatus": "Under Investigation",
+    "officerNotes": "",
+    "flags": [
+      "income_mismatch"
+    ],
+    "mlProbability": null,
+    "mlExplanation": null,
+    "caseHash": "c80821d13e4aa94390f61674e59a5e8237ec8212bb6ff9b032af60a331fee775",
+    "aadhaarFrequency": 1,
+    "sameSchemeCount": 1,
+    "duplicationStatus": "unique",
+    "escalated": true,
+    "priority": "High",
+    "investigation_report": {
+      "risk_summary": {
+        "risk_score": 20,
+        "risk_level": "LOW",
+        "ml_probability": 0,
+        "anomaly_score": 0.2
+      },
+      "duplication_analysis": {
+        "aadhaar_frequency": 1,
+        "same_scheme_count": 1,
+        "duplication_type": "unique"
+      },
+      "feature_analysis": {
+        "income": 28000,
+        "income_ratio": 1.12,
+        "bank_overlap": "none",
+        "district": "Varanasi",
+        "district_risk_value": 0.82
+      },
+      "shap_explanation": [],
+      "anomaly_analysis": {
+        "anomaly_score": 0.2,
+        "anomaly_interpretation": "Low anomaly — behaviour largely consistent with legitimate cases"
+      },
+      "final_decision_reasoning": "Varanasi is a high-risk district (risk score: 0.82).",
+      "generated_at": "2026-03-05T12:10:22.710Z"
+    },
+    "createdAt": "2026-03-05T11:37:56.650Z",
+    "updatedAt": "2026-03-05T12:10:22.710Z",
+    "__v": 0,
+    "escalated_at": "2026-03-05T12:10:22.710Z"
+  },
+  {
+    "name": "Final Test Block 2",
+    "aadhaarMasked": "XXXX-XXXX-7777",
+    "aadhaarClean": "999988887777",
+    "income": 50000,
+    "bankAccount": "SBI-9999",
+    "district": "Agra",
+    "state": "Uttar Pradesh",
+    "schemeName": "PM-KISAN",
+    "riskScore": 80,
+    "riskLevel": "HIGH",
+    "caseStatus": "Under Investigation",
+    "officerNotes": "",
+    "flags": [
+      "income_mismatch",
+      "identity_mismatch"
+    ],
+    "mlProbability": null,
+    "mlExplanation": null,
+    "caseHash": "06b688e1f6fe7811fd45125dcfd8534182855110eab090cba8ffe87995495355",
+    "aadhaarFrequency": 2,
+    "sameSchemeCount": 2,
+    "duplicationStatus": "identity_mismatch",
+    "escalated": true,
+    "priority": "High",
+    "investigation_report": {
+      "risk_summary": {
+        "risk_score": 80,
+        "risk_level": "HIGH",
+        "ml_probability": 0,
+        "anomaly_score": 0.2
+      },
+      "duplication_analysis": {
+        "aadhaar_frequency": 2,
+        "same_scheme_count": 2,
+        "duplication_type": "identity_mismatch"
+      },
+      "feature_analysis": {
+        "income": 50000,
+        "income_ratio": 2,
+        "bank_overlap": "none",
+        "district": "Agra",
+        "district_risk_value": 0.71
+      },
+      "shap_explanation": [],
+      "anomaly_analysis": {
+        "anomaly_score": 0.2,
+        "anomaly_interpretation": "Low anomaly — behaviour largely consistent with legitimate cases"
+      },
+      "final_decision_reasoning": "Identity mismatch: the same Aadhaar number has been registered under a different name, indicating potential identity fraud. Agra is a high-risk district (risk score: 0.71). Income significantly exceeds the typical threshold for this scheme.",
+      "generated_at": "2026-03-05T12:57:55.501Z"
+    },
+    "_id": "69a97d5d07af273f7ecb71d7",
+    "createdAt": "2026-03-05T12:55:57.617Z",
+    "updatedAt": "2026-03-05T12:57:55.501Z",
+    "__v": 0,
+    "escalated_at": "2026-03-05T12:57:55.501Z"
+  },
+  {
+    "name": "Rahul Sharma",
+    "aadhaarMasked": "XXXX-XXXX-9765",
+    "aadhaarClean": "153783279765",
+    "income": 25000,
+    "bankAccount": "sbi-6372",
+    "district": "Amritsar",
+    "state": "Uttar Pradesh",
+    "schemeName": "PM Ujjwala",
+    "riskScore": 0,
+    "riskLevel": "LOW",
+    "caseStatus": "Open",
+    "officerNotes": "",
+    "flags": [],
+    "mlProbability": null,
+    "mlExplanation": null,
+    "caseHash": "5d7b21f3eaf6a496c492382be9bd5a91caeb53145388fa61109224a1b9f1974b",
+    "aadhaarFrequency": 1,
+    "sameSchemeCount": 1,
+    "duplicationStatus": "unique",
+    "escalated": false,
+    "priority": "Low",
+    "investigation_report": null,
+    "_id": "69a97e1807af273f7ecb71f7",
+    "createdAt": "2026-03-05T12:59:04.083Z",
+    "updatedAt": "2026-03-05T12:59:04.083Z",
+    "__v": 0
+  },
+  {
+    "name": "Rahul Gupta",
+    "aadhaarMasked": "XXXX-XXXX-7834",
+    "aadhaarClean": "565746367834",
+    "income": 25000,
+    "bankAccount": "sbi-7643",
+    "district": "Amritsar",
+    "state": "Uttar Pradesh",
+    "schemeName": "PM Ujjwala",
+    "riskScore": 31,
+    "riskLevel": "LOW",
+    "caseStatus": "Under Investigation",
+    "officerNotes": "",
+    "flags": [],
+    "mlProbability": 0.3087,
+    "mlExplanation": {
+      "income": 0.0188,
+      "aadhaar_frequency": 0.0767,
+      "bank_overlap": 0.1736,
+      "income_ratio": 0.091,
+      "district_risk": 0.2219,
+      "scheme_age_days": 0.0882,
+      "past_clearances": 0.2395,
+      "flag_count": 0.3283
+    },
+    "caseHash": "b8aa33e5c17eef0d9679ebbdd2957824a28e733c4bf2259b5ea8dd858468f705",
+    "aadhaarFrequency": 1,
+    "sameSchemeCount": 1,
+    "duplicationStatus": "unique",
+    "escalated": true,
+    "priority": "High",
+    "investigation_report": {
+      "risk_summary": {
+        "risk_score": 31,
+        "risk_level": "LOW",
+        "ml_probability": 0.3087,
+        "anomaly_score": 0.2
+      },
+      "duplication_analysis": {
+        "aadhaar_frequency": 1,
+        "same_scheme_count": 1,
+        "duplication_type": "unique"
+      },
+      "feature_analysis": {
+        "income": 25000,
+        "income_ratio": 1,
+        "bank_overlap": "none",
+        "district": "Amritsar",
+        "district_risk_value": 0.5
+      },
+      "shap_explanation": [
+        {
+          "feature": "flag_count",
+          "impact_percentage": 27
+        },
+        {
+          "feature": "past_clearances",
+          "impact_percentage": 19
+        },
+        {
+          "feature": "district_risk",
+          "impact_percentage": 18
+        },
+        {
+          "feature": "bank_overlap",
+          "impact_percentage": 14
+        },
+        {
+          "feature": "income_ratio",
+          "impact_percentage": 7
+        },
+        {
+          "feature": "scheme_age_days",
+          "impact_percentage": 7
+        },
+        {
+          "feature": "aadhaar_frequency",
+          "impact_percentage": 6
+        },
+        {
+          "feature": "income",
+          "impact_percentage": 2
+        }
+      ],
+      "anomaly_analysis": {
+        "anomaly_score": 0.2,
+        "anomaly_interpretation": "Low anomaly — behaviour largely consistent with legitimate cases"
+      },
+      "final_decision_reasoning": "Risk factors are within acceptable bounds; escalation triggered by officer discretion.",
+      "generated_at": "2026-03-05T13:02:15.237Z"
+    },
+    "_id": "69a97ecb07af273f7ecb722d",
+    "createdAt": "2026-03-05T13:02:03.129Z",
+    "updatedAt": "2026-03-05T13:02:15.237Z",
+    "__v": 0,
+    "escalated_at": "2026-03-05T13:02:15.237Z"
+  },
+  {
+    "name": "Deletion Test 1",
+    "aadhaarMasked": "XXXX-XXXX-5566",
+    "aadhaarClean": "112233445566",
+    "income": 10000,
+    "bankAccount": "TEST-123",
+    "district": "Jaipur",
+    "state": "Uttar Pradesh",
+    "schemeName": "MGNREGA",
+    "riskScore": 0,
+    "riskLevel": "LOW",
+    "caseStatus": "Open",
+    "officerNotes": "",
+    "flags": [],
+    "mlProbability": null,
+    "mlExplanation": null,
+    "caseHash": "a253ce9d8eddeeae6e337331fffa7ab5567eefd244b180a93d6a8ca6a8d6d0f1",
+    "aadhaarFrequency": 1,
+    "sameSchemeCount": 1,
+    "duplicationStatus": "unique",
+    "escalated": false,
+    "priority": "Low",
+    "investigation_report": null,
+    "_id": "69a982a407af273f7ecb7267",
+    "createdAt": "2026-03-05T13:18:28.313Z",
+    "updatedAt": "2026-03-05T13:18:28.313Z",
+    "__v": 0
+  },
+  {
+    "name": "Deletion Test Final",
+    "aadhaarMasked": "XXXX-XXXX-1234",
+    "aadhaarClean": "123412341234",
+    "income": 15000,
+    "bankAccount": "DEL-TEST-001",
+    "district": "Agra",
+    "state": "Uttar Pradesh",
+    "schemeName": "Jan Dhan Yojana",
+    "riskScore": 0,
+    "riskLevel": "LOW",
+    "caseStatus": "Open",
+    "officerNotes": "",
+    "flags": [],
+    "mlProbability": null,
+    "mlExplanation": null,
+    "caseHash": "19200275f0b5a0f8e326c513aa155cf7086f81b6cf2015f1e306f1f90af5dd2c",
+    "aadhaarFrequency": 1,
+    "sameSchemeCount": 1,
+    "duplicationStatus": "unique",
+    "escalated": false,
+    "priority": "Low",
+    "investigation_report": null,
+    "_id": "69a9898407af273f7ecb7282",
+    "createdAt": "2026-03-05T13:47:48.144Z",
+    "updatedAt": "2026-03-05T13:47:48.144Z",
+    "__v": 0
+  },
+  {
+    "name": "Neha Kumari",
+    "aadhaarMasked": "XXXX-XXXX-7300",
+    "aadhaarClean": "925957177300",
+    "income": 20000,
+    "bankAccount": "sbi-9988",
+    "district": "Aligarh",
+    "state": "Uttar Pradesh",
+    "schemeName": "PM-KISAN",
+    "riskScore": 0,
+    "riskLevel": "LOW",
+    "caseStatus": "Open",
+    "officerNotes": "",
+    "flags": [],
+    "mlProbability": null,
+    "mlExplanation": null,
+    "caseHash": "a1e480b4b914c03bf23e4f5af243aa353e3f3bbec424ef2fcb75596be884f27b",
+    "aadhaarFrequency": 1,
+    "sameSchemeCount": 1,
+    "duplicationStatus": "unique",
+    "escalated": false,
+    "priority": "Low",
+    "investigation_report": null,
+    "_id": "69a98be7ef6ffed3eb827a65",
+    "createdAt": "2026-03-05T13:57:59.024Z",
+    "updatedAt": "2026-03-05T13:57:59.024Z",
+    "__v": 0
+  },
+  {
+    "name": "Neha Kumari",
+    "aadhaarMasked": "XXXX-XXXX-0212",
+    "aadhaarClean": "936883220212",
+    "income": 20000,
+    "bankAccount": "hdfc-7867",
+    "district": "Agra",
+    "state": "Uttar Pradesh",
+    "schemeName": "PM-KISAN",
+    "riskScore": 0,
+    "riskLevel": "LOW",
+    "caseStatus": "Open",
+    "officerNotes": "",
+    "flags": [],
+    "mlProbability": null,
+    "mlExplanation": null,
+    "caseHash": "4d29e85b703ef27401a5da18d9ba30315070e252923f3ef823d9f797294812d6",
+    "aadhaarFrequency": 1,
+    "sameSchemeCount": 1,
+    "duplicationStatus": "unique",
+    "escalated": false,
+    "priority": "Low",
+    "investigation_report": null,
+    "_id": "69a98c0fef6ffed3eb827a7b",
+    "createdAt": "2026-03-05T13:58:39.156Z",
+    "updatedAt": "2026-03-05T13:58:39.156Z",
+    "__v": 0
+  },
+  {
+    "name": "Sneha Verma",
+    "aadhaarMasked": "XXXX-XXXX-7300",
+    "aadhaarClean": "925957177300",
+    "income": 18000,
+    "bankAccount": "sbi-9988",
+    "district": "Aligarh",
+    "state": "Uttar Pradesh",
+    "schemeName": "MGNREGA",
+    "riskScore": 60,
+    "riskLevel": "HIGH",
+    "caseStatus": "Flagged",
+    "officerNotes": "",
+    "flags": [
+      "identity_mismatch"
+    ],
+    "mlProbability": null,
+    "mlExplanation": null,
+    "caseHash": "01f0b8a1c59cab37887978417990f88e66bbb00b25affacd4a6cd9225915d9db",
+    "aadhaarFrequency": 2,
+    "sameSchemeCount": 1,
+    "duplicationStatus": "identity_mismatch",
+    "escalated": false,
+    "priority": "Low",
+    "investigation_report": null,
+    "_id": "69a98c40ef6ffed3eb827a91",
+    "createdAt": "2026-03-05T13:59:28.226Z",
+    "updatedAt": "2026-03-05T13:59:28.226Z",
+    "__v": 0
+  },
+  {
+    "name": "ankita kumari",
+    "aadhaarMasked": "XXXX-XXXX-9012",
+    "aadhaarClean": "123456789012",
+    "income": 30000,
+    "bankAccount": "SBI-0087",
+    "district": "Agra",
+    "state": "Uttar Pradesh",
+    "schemeName": "PM-KISAN",
+    "riskScore": 20,
+    "riskLevel": "LOW",
+    "caseStatus": "Under Investigation",
+    "officerNotes": "",
+    "flags": [
+      "income_mismatch"
+    ],
+    "mlProbability": null,
+    "mlExplanation": null,
+    "caseHash": "b71f46666866fdb27f5671c0008c1a1011c90a5d4cad91208d8fefffb198d8a3",
+    "aadhaarFrequency": 1,
+    "sameSchemeCount": 1,
+    "duplicationStatus": "unique",
+    "escalated": true,
+    "priority": "High",
+    "investigation_report": {
+      "risk_summary": {
+        "risk_score": 20,
+        "risk_level": "LOW",
+        "ml_probability": 0,
+        "anomaly_score": 0.2
+      },
+      "duplication_analysis": {
+        "aadhaar_frequency": 1,
+        "same_scheme_count": 1,
+        "duplication_type": "unique"
+      },
+      "feature_analysis": {
+        "income": 30000,
+        "income_ratio": 1.2,
+        "bank_overlap": "none",
+        "district": "Agra",
+        "district_risk_value": 0.71
+      },
+      "shap_explanation": [],
+      "anomaly_analysis": {
+        "anomaly_score": 0.2,
+        "anomaly_interpretation": "Low anomaly — behaviour largely consistent with legitimate cases"
+      },
+      "final_decision_reasoning": "Agra is a high-risk district (risk score: 0.71).",
+      "generated_at": "2026-03-05T16:33:08.114Z"
+    },
+    "_id": "69a9b02df37668ab487b2327",
+    "createdAt": "2026-03-05T16:32:45.860Z",
+    "updatedAt": "2026-03-05T16:33:08.114Z",
+    "__v": 0,
+    "escalated_at": "2026-03-05T16:33:08.114Z"
+  },
+  {
+    "name": "riya singh",
+    "aadhaarMasked": "XXXX-XXXX-9012",
+    "aadhaarClean": "123456789012",
+    "income": 67000,
+    "bankAccount": "SBI-6500",
+    "district": "Delhi",
+    "state": "Uttar Pradesh",
+    "schemeName": "PM-KISAN",
+    "riskScore": 80,
+    "riskLevel": "HIGH",
+    "caseStatus": "Under Investigation",
+    "officerNotes": "",
+    "flags": [
+      "income_mismatch",
+      "identity_mismatch"
+    ],
+    "mlProbability": null,
+    "mlExplanation": null,
+    "caseHash": "992da4fa64260fefc084a04350203a9663ec4d1cdfea8a11bede78c4a3e37243",
+    "aadhaarFrequency": 2,
+    "sameSchemeCount": 2,
+    "duplicationStatus": "identity_mismatch",
+    "escalated": true,
+    "priority": "High",
+    "investigation_report": {
+      "risk_summary": {
+        "risk_score": 80,
+        "risk_level": "HIGH",
+        "ml_probability": 0,
+        "anomaly_score": 0.2
+      },
+      "duplication_analysis": {
+        "aadhaar_frequency": 2,
+        "same_scheme_count": 2,
+        "duplication_type": "identity_mismatch"
+      },
+      "feature_analysis": {
+        "income": 67000,
+        "income_ratio": 2.68,
+        "bank_overlap": "none",
+        "district": "Delhi",
+        "district_risk_value": 0.5
+      },
+      "shap_explanation": [],
+      "anomaly_analysis": {
+        "anomaly_score": 0.2,
+        "anomaly_interpretation": "Low anomaly — behaviour largely consistent with legitimate cases"
+      },
+      "final_decision_reasoning": "Identity mismatch: the same Aadhaar number has been registered under a different name, indicating potential identity fraud. Income significantly exceeds the typical threshold for this scheme.",
+      "generated_at": "2026-03-05T16:36:21.715Z"
+    },
+    "_id": "69a9b0aff37668ab487b233f",
+    "createdAt": "2026-03-05T16:34:55.722Z",
+    "updatedAt": "2026-03-05T16:36:21.715Z",
+    "__v": 0,
+    "escalated_at": "2026-03-05T16:36:21.715Z"
+  }
+]
